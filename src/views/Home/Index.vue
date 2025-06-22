@@ -12,45 +12,45 @@
                 <div class="text-20px">
                   {{ t('workplace.welcome') }} {{ username }} {{ t('workplace.happyDay') }}
                 </div>
-                <div class="mt-10px text-14px text-gray-500">
-                  {{ t('workplace.toady') }}，20℃ - 32℃！
-                </div>
+<!--                <div class="mt-10px text-14px text-gray-500">-->
+<!--                  {{ t('workplace.toady') }}，20℃ - 32℃！-->
+<!--                </div>-->
               </div>
             </div>
           </el-col>
-          <el-col :xl="12" :lg="12" :md="12" :sm="24" :xs="24">
-            <div class="h-70px flex items-center justify-end lt-sm:mt-10px">
-              <div class="px-8px text-right">
-                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.project') }}</div>
-                <CountTo
-                  class="text-20px"
-                  :start-val="0"
-                  :end-val="totalSate.project"
-                  :duration="2600"
-                />
-              </div>
-              <el-divider direction="vertical" />
-              <div class="px-8px text-right">
-                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.toDo') }}</div>
-                <CountTo
-                  class="text-20px"
-                  :start-val="0"
-                  :end-val="totalSate.todo"
-                  :duration="2600"
-                />
-              </div>
-              <el-divider direction="vertical" border-style="dashed" />
-              <div class="px-8px text-right">
-                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.access') }}</div>
-                <CountTo
-                  class="text-20px"
-                  :start-val="0"
-                  :end-val="totalSate.access"
-                  :duration="2600"
-                />
-              </div>
-            </div>
-          </el-col>
+<!--          <el-col :xl="12" :lg="12" :md="12" :sm="24" :xs="24">-->
+<!--            <div class="h-70px flex items-center justify-end lt-sm:mt-10px">-->
+<!--              <div class="px-8px text-right">-->
+<!--                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.project') }}</div>-->
+<!--                <CountTo-->
+<!--                  class="text-20px"-->
+<!--                  :start-val="0"-->
+<!--                  :end-val="totalSate.project"-->
+<!--                  :duration="2600"-->
+<!--                />-->
+<!--              </div>-->
+<!--              <el-divider direction="vertical" />-->
+<!--              <div class="px-8px text-right">-->
+<!--                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.toDo') }}</div>-->
+<!--                <CountTo-->
+<!--                  class="text-20px"-->
+<!--                  :start-val="0"-->
+<!--                  :end-val="totalSate.todo"-->
+<!--                  :duration="2600"-->
+<!--                />-->
+<!--              </div>-->
+<!--              <el-divider direction="vertical" border-style="dashed" />-->
+<!--              <div class="px-8px text-right">-->
+<!--                <div class="mb-16px text-14px text-gray-400">{{ t('workplace.access') }}</div>-->
+<!--                <CountTo-->
+<!--                  class="text-20px"-->
+<!--                  :start-val="0"-->
+<!--                  :end-val="totalSate.access"-->
+<!--                  :duration="2600"-->
+<!--                />-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </el-col>-->
         </el-row>
       </el-skeleton>
     </el-card>
@@ -65,7 +65,7 @@
             <el-link
               type="primary"
               :underline="false"
-              href="https://github.com/yudaocode"
+              href="/pay/order"
               target="_blank"
             >
               {{ t('action.more') }}
@@ -153,7 +153,7 @@
         <template #header>
           <div class="h-3 flex justify-between">
             <span>{{ t('workplace.notice') }}</span>
-            <el-link type="primary" :underline="false">{{ t('action.more') }}</el-link>
+            <el-link type="primary" :underline="false" href="/system/messages/notice">{{ t('action.more') }}</el-link>
           </div>
         </template>
         <el-skeleton :loading="loading" animated>
@@ -221,54 +221,54 @@ const getCount = async () => {
 let projects = reactive<Project[]>([])
 const getProject = async () => {
   const data = [
-    {
-      name: 'ruoyi-vue-pro',
-      icon: 'simple-icons:springboot',
-      message: 'github.com/YunaiV/ruoyi-vue-pro',
-      personal: 'Spring Boot 单体架构',
-      time: new Date('2025-01-02'),
-      color: '#6DB33F'
-    },
-    {
-      name: 'yudao-ui-admin-vue3',
-      icon: 'ep:element-plus',
-      message: 'github.com/yudaocode/yudao-ui-admin-vue3',
-      personal: 'Vue3 + element-plus 管理后台',
-      time: new Date('2025-02-03'),
-      color: '#409EFF'
-    },
-    {
-      name: 'yudao-ui-mall-uniapp',
-      icon: 'icon-park-outline:mall-bag',
-      message: 'github.com/yudaocode/yudao-ui-mall-uniapp',
-      personal: 'Vue3 + uniapp 商城手机端',
-      time: new Date('2025-03-04'),
-      color: '#ff4d4f'
-    },
-    {
-      name: 'yudao-cloud',
-      icon: 'material-symbols:cloud-outline',
-      message: 'github.com/YunaiV/yudao-cloud',
-      personal: 'Spring Cloud 微服务架构',
-      time: new Date('2025-04-05'),
-      color: '#1890ff'
-    },
-    {
-      name: 'yudao-ui-admin-vben',
-      icon: 'devicon:antdesign',
-      message: 'github.com/yudaocode/yudao-ui-admin-vben',
-      personal: 'Vue3 + vben5(antd) 管理后台',
-      time: new Date('2025-05-06'),
-      color: '#e18525'
-    },
-    {
-      name: 'yudao-ui-admin-uniapp',
-      icon: 'ant-design:mobile',
-      message: 'github.com/yudaocode/yudao-ui-admin-uniapp',
-      personal: 'Vue3 + uniapp 管理手机端',
-      time: new Date('2025-06-01'),
-      color: '#2979ff'
-    }
+    // {
+    //   name: 'ruoyi-vue-pro',
+    //   icon: 'simple-icons:springboot',
+    //   message: 'github.com/YunaiV/ruoyi-vue-pro',
+    //   personal: 'Spring Boot 单体架构',
+    //   time: new Date('2025-01-02'),
+    //   color: '#6DB33F'
+    // },
+    // {
+    //   name: 'yudao-ui-admin-vue3',
+    //   icon: 'ep:element-plus',
+    //   message: 'github.com/yudaocode/yudao-ui-admin-vue3',
+    //   personal: 'Vue3 + element-plus 管理后台',
+    //   time: new Date('2025-02-03'),
+    //   color: '#409EFF'
+    // },
+    // {
+    //   name: 'yudao-ui-mall-uniapp',
+    //   icon: 'icon-park-outline:mall-bag',
+    //   message: 'github.com/yudaocode/yudao-ui-mall-uniapp',
+    //   personal: 'Vue3 + uniapp 商城手机端',
+    //   time: new Date('2025-03-04'),
+    //   color: '#ff4d4f'
+    // },
+    // {
+    //   name: 'yudao-cloud',
+    //   icon: 'material-symbols:cloud-outline',
+    //   message: 'github.com/YunaiV/yudao-cloud',
+    //   personal: 'Spring Cloud 微服务架构',
+    //   time: new Date('2025-04-05'),
+    //   color: '#1890ff'
+    // },
+    // {
+    //   name: 'yudao-ui-admin-vben',
+    //   icon: 'devicon:antdesign',
+    //   message: 'github.com/yudaocode/yudao-ui-admin-vben',
+    //   personal: 'Vue3 + vben5(antd) 管理后台',
+    //   time: new Date('2025-05-06'),
+    //   color: '#e18525'
+    // },
+    // {
+    //   name: 'yudao-ui-admin-uniapp',
+    //   icon: 'ant-design:mobile',
+    //   message: 'github.com/yudaocode/yudao-ui-admin-uniapp',
+    //   personal: 'Vue3 + uniapp 管理手机端',
+    //   time: new Date('2025-06-01'),
+    //   color: '#2979ff'
+    // }
   ]
   projects = Object.assign(projects, data)
 }
@@ -278,27 +278,15 @@ let notice = reactive<Notice[]>([])
 const getNotice = async () => {
   const data = [
     {
-      title: '系统支持 JDK 8/17/21，Vue 2/3',
-      type: '技术兼容性',
-      keys: ['JDK', 'Vue'],
+      title: '商城系统升级！！！',
+      type: '系统维护',
+      keys: ['商城', '升级'],
       date: new Date()
     },
     {
-      title: '后端提供 Spring Boot 2.7/3.2 + Cloud 双架构',
-      type: '架构灵活性',
-      keys: ['Boot', 'Cloud'],
-      date: new Date()
-    },
-    {
-      title: '全部开源，个人与企业可 100% 直接使用，无需授权',
-      type: '开源免授权',
-      keys: ['无需授权'],
-      date: new Date()
-    },
-    {
-      title: '国内使用最广泛的快速开发平台，远超 10w+ 企业使用',
-      type: '广泛企业认可',
-      keys: ['最广泛', '10w+'],
+      title: '订单系统全新支持支付宝',
+      type: '系统升级',
+      keys: ['订单', '支付宝'],
       date: new Date()
     }
   ]
@@ -311,39 +299,39 @@ let shortcut = reactive<Shortcut[]>([])
 const getShortcut = async () => {
   const data = [
     {
-      name: '首页',
+      name: '商城首页',
       icon: 'ion:home-outline',
-      url: '/',
+      url: '/mall/home',
       color: '#1fdaca'
     },
     {
-      name: '商城中心',
+      name: '会员管理',
       icon: 'ep:shop',
-      url: '/mall/home',
+      url: '/member/user',
       color: '#ff6b6b'
     },
     {
-      name: 'AI 大模型',
+      name: '商品中心',
       icon: 'tabler:ai',
-      url: '/ai/chat',
+      url: '/mall/product/spu',
       color: '#7c3aed'
     },
     {
-      name: 'ERP 系统',
+      name: '订单中心',
       icon: 'simple-icons:erpnext',
-      url: '/erp/home',
+      url: '/mall/trade/order',
       color: '#3fb27f'
     },
     {
-      name: 'CRM 系统',
+      name: '商品统计',
       icon: 'simple-icons:civicrm',
-      url: '/crm/backlog',
+      url: '/mall/statistics/product',
       color: '#4daf1bc9'
     },
     {
-      name: 'IoT 物联网',
+      name: '交易统计',
       icon: 'fa-solid:hdd',
-      url: '/iot/home',
+      url: '/mall/statistics/trade',
       color: '#1a73e8'
     }
   ]
